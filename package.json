@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jquery": "^3.6.4",
+    "jsdom": "^21.1.1"
+  }
+}
