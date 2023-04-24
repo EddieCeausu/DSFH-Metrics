@@ -47,7 +47,7 @@ function getData(urlData = URL) {
         contentType: 'application/json',
         dataType: 'json',
         processData: false,
-        success: function (resp) { response = resp; }
+        success: function (resp) { RESPONSE = resp; }
     });
 }
 
@@ -81,4 +81,9 @@ async function printvars() {
     console.log(DATA);
 }
 
-printvars();
+async function exportVars() {
+  await parseData();
+  return { 'period': PERIOD, 'summary': SUMMARY, 'metrics': METRICS, 'data': DATA }
+}
+
+module.exports = { printvars, exportVars };
